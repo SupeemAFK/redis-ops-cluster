@@ -1,5 +1,5 @@
 ## Example usage of redis operator
-This is repo is example of how to use redis on kubernetes both architectures redis sentinel for High Availabilty (HA) with failover and redis cluster for High Scalabity.
+This repo is example of how to use redis on kubernetes with both architectures redis sentinel for High Availabilty (HA) with failover and redis cluster for High Scalabity.
 
 ### 1. Redis cluster (ops-tree)
 #### Install ops-tree
