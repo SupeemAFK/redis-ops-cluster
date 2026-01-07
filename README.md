@@ -13,10 +13,22 @@ helm repo update
 ```
 helm install redis-operator ot-helm/redis-operator -n redis-operator --create-namespace
 ```
+
 #### Create redis cluster
 ```
 kubectl apply -f redis/redis-cluster.yaml -n redis-operator
 ```
+This will create redis cluster and use pvc.
+
+#### Checking
+```
+kubectl get pods -n redis-operator
+```
+You should see 3 follower and 3 leader.
+```
+kubectl get svc -n redis-operator
+```
+Use **redis-cluster-master** for consumation.
 
 #### Example usage with redis-cli
 ##### 1. Spin up temp pod for redis-cli
