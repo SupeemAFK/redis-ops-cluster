@@ -4,7 +4,7 @@ This repo is example of how to use redis on kubernetes with both architectures r
 ### [Redis cluster (ops-tree)](https://example.com)
 
 ![Architecture](https://github.com/OT-CONTAINER-KIT/redis-operator/raw/main/static/redis-operator-architecture.png)
-#### Install ops-tree
+### Install ops-tree
 ```
 helm repo add ot-helm https://ot-container-kit.github.io/helm-charts
 
