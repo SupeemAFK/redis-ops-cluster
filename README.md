@@ -14,19 +14,19 @@ helm repo update
 helm install redis-operator ot-helm/redis-operator -n redis-operator --create-namespace
 ```
 
-### Example Volumes
+### Example Volumes with minikube
 ```
 kubectl apply -f redis/redis-storage.yaml
 ```
 This create 6 persistent volumes with 1Gi each.
 
-#### Create redis cluster
+### Create redis cluster
 ```
 kubectl apply -f redis/redis-cluster.yaml -n redis-operator
 ```
 This will create redis cluster and pvc bound to earlier pv.
 
-#### Checking
+### Checking
 ```
 kubectl get pods -n redis-operator
 ```
@@ -40,16 +40,16 @@ kubectl get pvc -n redis-operator
 ```
 Check bounded pvc for redis-cluster.
 
-#### Example usage with redis-cli
-##### 1. Spin up temp pod for redis-cli
+### Example usage with redis-cli
+#### 1. Spin up temp pod for redis-cli
 ```
 kubectl run -it --rm redis-cli -n redis-operator --image=redis:alpine -- sh
 ```
-##### 2. Inside use redis-cli command
+#### 2. Inside use redis-cli command
 ```
 redis-cli -c -h redis-cluster-master 
 ```
-##### 3. Set and Get values
+#### 3. Set and Get values
 ```
 Set Hello "World!"
 ```
