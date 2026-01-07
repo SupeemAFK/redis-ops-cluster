@@ -14,7 +14,7 @@ spec:
   storage:
     volumeClaimTemplate:
       spec:
-        storageClassName: "local-storage"
+        storageClassName: "redis-pv"
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:

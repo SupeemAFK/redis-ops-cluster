@@ -1,25 +1,74 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: redis-data-pv
+  name: redis-pv-0
 spec:
+  storageClassName: "redis-pv" # Must match your RedisCluster YAML
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "/data/redis-storage"
+    path: "/data/redis-0"
 ---
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: redis-data-pvc
-  namespace: redis-operator
+  name: redis-pv-1
 spec:
-  storageClassName: ""
+  storageClassName: "redis-pv"
+  capacity:
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 2Gi
+  hostPath:
+    path: "/data/redis-1"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv-2
+spec:
+  storageClassName: "redis-pv"
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data/redis-2"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv-3
+spec:
+  storageClassName: "redis-pv"
+  capacity:
+    storage: 1Gi
+  accessModes: ["ReadWriteOnce"]
+  hostPath:
+    path: "/data/redis-3"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv-4
+spec:
+  storageClassName: "redis-pv"
+  capacity:
+    storage: 1Gi
+  accessModes: ["ReadWriteOnce"]
+  hostPath:
+    path: "/data/redis-4"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv-5
+spec:
+  storageClassName: "redis-pv"
+  capacity:
+    storage: 1Gi
+  accessModes: ["ReadWriteOnce"]
+  hostPath:
+    path: "/data/redis-5"
